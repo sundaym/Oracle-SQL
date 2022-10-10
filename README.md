@@ -1,7 +1,7 @@
 # Oracle-SQL
 Oracle SQL examples:  
 merge into  
-decode
+decode  
 with as  
 listagg  
 rollup  

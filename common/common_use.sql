@@ -103,3 +103,5 @@ where s.paddr = p.addr and
         a.sid = s.sid   and
         a.object='SUBSCRIBER_ATTR'
 order by s.username, s.osuser
+
+-- 14.

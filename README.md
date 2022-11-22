@@ -23,4 +23,7 @@ echo=dbms_output.put_line(
 tt=truncate table
 gb=group by
 dist=distinct
+lj=left join
+rj=right join
+ij=inner join
 ```

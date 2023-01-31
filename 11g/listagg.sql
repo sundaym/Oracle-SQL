@@ -14,7 +14,7 @@ with emp as (
 )
 select deptno, ename from emp
 
--- example1 多行合并成一行 listagg() within group ()
+-- example1 多行合并成一行 listagg() within group (), separated by comma
 with emp as (
     select '20' deptno, 'John' ename from dual
     union

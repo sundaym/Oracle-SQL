@@ -12,13 +12,14 @@ AutoReplace.txt
 s=select
 f=from
 w=where
+tab=table
 sf=select * from
 sfc=select count(*) from
 fu=for update
 ob=order by
 ii=insert into
 df=delete from
-u=update
+up=update
 echo=dbms_output.put_line(
 tt=truncate table
 gb=group by

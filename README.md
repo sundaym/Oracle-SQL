@@ -28,3 +28,13 @@ lj=left join
 rj=right join
 ij=inner join
 ```
+
+## Oracle Memory View
+```SQL
+select 'SGA' as name, round(sum(value) / 1024 / 1024, 2) || 'M' as "SIZE(M)"
+from v$sga
+union
+select 'PGA' as name, round(value / 1024 / 1024, 2) || 'M' as "SIZE(M)"
+from v$pgastat
+where name = 'total PGA allocated'
+```

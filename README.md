@@ -4,7 +4,11 @@ merge into
 decode  
 with as  
 listagg  
-rollup  
+rollup, grouping, grouping_id  
+round
+nullif  
+extract  
+...
 
 ## plsql developer IDE
 AutoReplace.txt

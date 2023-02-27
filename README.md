@@ -5,7 +5,7 @@ decode
 with as  
 listagg  
 rollup, grouping, grouping_id  
-round
+round  
 nullif  
 extract  
 ...

@@ -48,9 +48,9 @@ with salary as (
 select dept, job, sum(money) from salary group by rollup(dept, job) having grouping_id(dept, job) in (0, 3);
 
 /***************************************************************************
-  rollup分组grouping_id结果Example
+  rollup分组grouping_id结果Example, 从左往右计算, 先算dept再算job
   分组                    位向量            grouping_id结果
   dept,job                0 0                  0
-  dept, null小计          1 0                  2
+  dept, null小计          0 1                  2
   null, null合计          1 1                  3
 ***************************************************************************/

@@ -202,9 +202,55 @@ BEGIN
 END;
 /
 
-/*****************************
+/********************************************
   游标
   两种类型: 隐式游标, 显示游标
-*****************************/
+  cursor cursor_name is select_statement;
+*********************************************/
 
+DECLARE
+    c_id customers.id%type;
+    c_name customers.name%type;
+    c_addr customers.address%type;
+    -- 声明游标
+    CURSOR c_customers is SELECT id, name, address FROM customers;
+BEGIN
+    -- 打开游标
+    OPEN c_customers;
+    LOOP
+        -- 获取游标
+        FETCH c_customers into c_id, c_name, c_addr;
+        EXIT WHEN c_customers%notfound;
+        dbms_output.put_line(c_id || ' ' || c_name || ' ' || c_addr);
+    END LOOP;
+    -- 关闭游标
+    CLOSE c_customers;
+END;
+/
 
+/****记录****/
+-- 基于表
+DECLARE
+    customer_rec customers%rowtype;
+BEGIN
+    SELECT * into customer_rec FROM customers WHERE id = 5;
+    dbms_output.put_line('客户ID: ' || customer_rec.id);
+    dbms_output.put_line('客户姓名: ' || customer_rec.name);
+    dbms_output.put_line('客户地址: ' || customer_rec.address);
+    dbms_output.put_line('客户薪资: ' || customer_rec.salary);
+END;
+/
+
+-- 基于游标
+DECLARE
+    CURSOR customer_cur is SELECT id, name, address FROM customers;
+    customer_rec customer_cur%rowtype;
+BEGIN
+    OPEN customer_cur;
+    LOOP
+        FETCH customer_cur into customer_rec;
+        EXIT WHEN customer_cur%notfound;
+        DBMS_OUTPUT.put_line(customer_rec.id || ' ' || customer_rec.name);
+    END LOOP;
+END;
+/

@@ -254,3 +254,19 @@ BEGIN
     END LOOP;
 END;
 /
+
+/********************
+
+异常处理
+********************/
+DECLARE
+    exception_name EXCEPTION;
+BEGIN
+    IF condition THEN
+        RAISE exception_name;
+    END IF;
+EXCEPTION
+    WHEN exception_name THEN
+    statement;
+END;
+/

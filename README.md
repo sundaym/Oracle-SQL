@@ -31,6 +31,7 @@ dist=distinct
 lj=left join
 rj=right join
 ij=inner join
+sfd=select from dual
 ```
 
 ## Oracle Memory View
@@ -41,4 +42,9 @@ union
 select 'PGA' as name, round(value / 1024 / 1024, 2) || 'M' as "SIZE(M)"
 from v$pgastat
 where name = 'total PGA allocated'
+```
+
+## Oracle Keywords
+```SQL
+select * from v$reserved_words WHERE KEYWORD=UPPER('size');
 ```

@@ -3,9 +3,8 @@ Oracle temporary table
 
 *********************************/
 
--- 1. session
-
-create global temporary table temp_table_session
+-- 1. transaction
+create global temporary table temp_table_transaction
 (
     col1 varchar2(100),
     col2 varchar2(100),
@@ -13,8 +12,8 @@ create global temporary table temp_table_session
 )
     on commit delete rows;
 
--- 2. transaction
-create global temporary table temp_table_transaction
+-- 2. session
+create global temporary table temp_table_session
 (
     col1 varchar2(100),
     col2 varchar2(100),

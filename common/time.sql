@@ -2,6 +2,11 @@
   时间相关操作
 *************************************************************************************************/
 
+---- 时间格式化, 日期+日内时间
+select to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss') from dual; -- 24小时
+select to_char(sysdate,'YYYY-MM-DD HH12:MI:SS AM')from dual; -- 12小时
+select to_date('2023-10-12 13:00:00', 'yyyy-mm-dd hh24:mi:ss') from dual;
+
 ---- 抽取年，月，日...
 select to_char(sysdate, 'q') from dual;  -- 季度
 select to_char(sysdate, 'yyyy') from dual; -- 年

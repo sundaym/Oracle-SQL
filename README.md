@@ -44,6 +44,24 @@ from v$pgastat
 where name = 'total PGA allocated'
 ```
 
+## Oracle查看锁表和解锁
+1.查看是否有被锁的表：
+```
+select b.owner,b.object_name,a.session_id,a.locked_mode
+from v$locked_object a,dba_objects b
+where b.object_id = a.object_id
+```
+2.查看是哪个进程锁的
+```
+select b.username,b.sid,b.serial#,logon_time
+from v$locked_object a,v$session b
+where a.session_id = b.sid order by b.logon_time
+```
+3.杀掉进程
+```
+alter system kill session 'sid,serial#';
+-- alter system kill session '10,32835'
+```
 ## Oracle Keywords
 ```SQL
 select * from v$reserved_words WHERE KEYWORD=UPPER('size');

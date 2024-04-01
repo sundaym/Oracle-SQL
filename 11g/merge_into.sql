@@ -1,6 +1,6 @@
 /* merge into examples */
 
--- example1 存在更新不存在删除
+-- example1 存在更新不存在插入
 merge into t1 a
     using (select t1_id, address, age from t2) b
     on (a.id = b.t1_id)

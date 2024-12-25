@@ -22,7 +22,7 @@ using t1
 on (t1.name = t2.name)
 when not matched then
     insert
-    values (t1.name, t2.address)
+    values (t1.name, t1.address)
 
 -- example4 交换更新, 将t1表id=1的address改为id=2的address, id=2的address改为id=1的address
 merge into t1

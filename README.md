@@ -1,3 +1,14 @@
+## sql文件开头注释
+```
+/***************************************************************************
+name: init system sql
+desc: DDL and DML for initializing system
+version: 2025
+
+*****************************************************************************/
+
+```
+
 ## Oracle-SQL
 Oracle 11g SQL examples:  
 merge into  
